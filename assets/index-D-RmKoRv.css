@@ -5,3 +5,17 @@ body{position:relative}
 body::before{content:"";position:fixed;inset:-10%;background-image:url("bg-ai.svg"),url("bg-science.svg"),url("bg-tech.svg"),url("bg-engineering.svg");background-repeat:no-repeat;background-size:240px,260px,220px,250px;background-position:8% 18%,82% 12%,12% 72%,86% 78%;opacity:.25;filter:blur(8px);z-index:0;pointer-events:none}
 
 body::before{background-image:url("AI-Agents.png"),url("bg-ai.svg"),url("bg-science.svg"),url("bg-tech.svg"),url("bg-engineering.svg");background-size:cover,240px,260px,220px,250px;background-position:50% var(--bg-scroll,50%),8% 18%,82% 12%,12% 72%,86% 78%;opacity:.28;filter:blur(22px);background-attachment:scroll}
+
+/* Background override for AI-Agents with safe stacking */
+body::before{content:none}
+#root{position:relative;z-index:0}
+#root::before{content:"";position:fixed;inset:-10%;z-index:-1;pointer-events:none;background-image:url("AI-Agents.png"),url("bg-ai.svg"),url("bg-science.svg"),url("bg-tech.svg"),url("bg-engineering.svg");background-repeat:no-repeat;background-size:cover,240px,260px,220px,250px;background-position:50% var(--bg-scroll,50%),8% 18%,82% 12%,12% 72%,86% 78%;background-attachment:scroll;opacity:.24;filter:blur(10px)}
+
+/* Temporarily disable background images and blur */
+body::before,
+#root::before{
+  content:none !important;
+  background:none !important;
+  filter:none !important;
+  opacity:1 !important;
+}

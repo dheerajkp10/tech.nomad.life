@@ -33,33 +33,7 @@
         }
       })();
     </script>
-<<<<<<< HEAD
     <!-- Background scroll disabled temporarily -->
-=======
-    <script>
-      (function () {
-        var ticking = false;
-        function updateScrollBg() {
-          var doc = document.documentElement;
-          var maxScroll = doc.scrollHeight - window.innerHeight;
-          var ratio = maxScroll > 0 ? window.scrollY / maxScroll : 0;
-          var pos = Math.round(ratio * 100);
-          document.body.style.setProperty("--bg-scroll", pos + "%");
-          ticking = false;
-        }
-        function onScroll() {
-          if (!ticking) {
-            ticking = true;
-            requestAnimationFrame(updateScrollBg);
-          }
-        }
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", updateScrollBg);
-        window.addEventListener("load", updateScrollBg);
-        updateScrollBg();
-      })();
-    </script>
->>>>>>> caf24d1 (Update hero, services, about section, favicon, and blog images)
   </head>
   <body>
     <div id="root"></div>
