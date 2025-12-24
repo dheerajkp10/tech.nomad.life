@@ -56,6 +56,53 @@
         updateScrollBg();
       })();
     </script>
+    <script>
+      // Mobile-only helper to blur the about page profile hero when it scrolls out of view
+      (function () {
+        var ABOUT_PATH = "/tech.nomad.life/about";
+        var isAboutPage = location.pathname === ABOUT_PATH || location.pathname === ABOUT_PATH + "/";
+        if (!isAboutPage) return;
+
+        var mq = window.matchMedia("(max-width: 768px)");
+        var profileSection;
+
+        function findProfileSection() {
+          var img = document.querySelector('img[src*="profile-about"]');
+          if (!img) return null;
+          return img.closest("section") || img.closest("div");
+        }
+
+        function toggleBlur() {
+          if (!profileSection) return;
+          if (!mq.matches) {
+            profileSection.classList.remove("about-profile--blurred");
+            return;
+          }
+
+          var rect = profileSection.getBoundingClientRect();
+          var hasScrolledPast = rect.top < -80 || rect.bottom < 60;
+          profileSection.classList.toggle("about-profile--blurred", hasScrolledPast);
+        }
+
+        function initWatcher() {
+          profileSection = findProfileSection();
+          if (!profileSection) return false;
+          profileSection.classList.add("about-profile-section");
+          toggleBlur();
+          window.addEventListener("scroll", toggleBlur, { passive: true });
+          window.addEventListener("resize", toggleBlur);
+          return true;
+        }
+
+        if (!initWatcher()) {
+          // Wait for React to mount the about page content
+          var observer = new MutationObserver(function () {
+            if (initWatcher()) observer.disconnect();
+          });
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
