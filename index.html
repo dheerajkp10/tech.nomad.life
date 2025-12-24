@@ -14,7 +14,7 @@
     <meta name="twitter:description" content="Software Development Manager at Amazon. Offering mock interviews, system design coaching, resume reviews, and career mentorship for engineers." />
     <meta name="twitter:image" content="https://dheerajkp10.github.io/technomad/opengraph.jpg" />
 
-    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,6 +31,29 @@
           var target = "/technomad" + decodeURIComponent(redirectPath);
           window.history.replaceState(null, "", target);
         }
+      })();
+    </script>
+    <script>
+      (function () {
+        var ticking = false;
+        function updateScrollBg() {
+          var doc = document.documentElement;
+          var maxScroll = doc.scrollHeight - window.innerHeight;
+          var ratio = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+          var pos = Math.round(ratio * 100);
+          document.body.style.setProperty("--bg-scroll", pos + "%");
+          ticking = false;
+        }
+        function onScroll() {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateScrollBg);
+          }
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", updateScrollBg);
+        window.addEventListener("load", updateScrollBg);
+        updateScrollBg();
       })();
     </script>
   </head>
