@@ -1,1 +1,0 @@
-# technomad.github.io
