@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect x="10" y="10" width="180" height="180" rx="28" fill="none" stroke="#d8b26a" stroke-opacity="0.35" stroke-width="6" />
+  <circle cx="60" cy="60" r="8" fill="#d8b26a" fill-opacity="0.25" />
+  <circle cx="140" cy="60" r="8" fill="#d8b26a" fill-opacity="0.25" />
+  <circle cx="60" cy="140" r="8" fill="#d8b26a" fill-opacity="0.25" />
+  <circle cx="140" cy="140" r="8" fill="#d8b26a" fill-opacity="0.25" />
+  <line x1="60" y1="60" x2="140" y2="60" stroke="#d8b26a" stroke-opacity="0.25" stroke-width="4" />
+  <line x1="60" y1="60" x2="60" y2="140" stroke="#d8b26a" stroke-opacity="0.25" stroke-width="4" />
+  <line x1="140" y1="60" x2="140" y2="140" stroke="#d8b26a" stroke-opacity="0.25" stroke-width="4" />
+  <line x1="60" y1="140" x2="140" y2="140" stroke="#d8b26a" stroke-opacity="0.25" stroke-width="4" />
+  <text x="100" y="118" text-anchor="middle" font-family="Playfair Display, serif" font-size="44" fill="#d8b26a" fill-opacity="0.35">AI</text>
+</svg>
