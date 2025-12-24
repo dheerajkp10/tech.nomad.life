@@ -1,1 +1,1 @@
-# tech.nomad.life
+# technomad.github.io
