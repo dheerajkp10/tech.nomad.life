@@ -1,191 +1,156 @@
 import { Link } from 'wouter';
-import { ArrowRight, CheckCircle, Globe, Users, Award, Zap, MapPin, Calendar, Clock, ExternalLink } from 'lucide-react';
-import { services, blogPosts, whyMePoints } from '../data/content';
+import { ArrowRight, Briefcase, MapPin, Users, Globe, TrendingUp, MessageSquare, Plane, BookOpen } from 'lucide-react';
 
-const whyIcons = [Award, Users, Zap, Users, Globe, CheckCircle];
+const mentorPoints = [
+  {
+    icon: Briefcase,
+    title: 'Real Industry Experience',
+    desc: "10+ years of professional experience building systems at scale. I've faced the challenges you're facing.",
+  },
+  {
+    icon: Users,
+    title: 'Interview Expertise',
+    desc: 'Hired Over 60 engineers across organizations. I know exactly what interviewers are looking for—technical depth, problem-solving, and communication.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'System Design Mastery',
+    desc: 'Built and scaled systems handling billions of invocations daily. I can break down complex architectural decisions into learnable concepts.',
+  },
+  {
+    icon: MessageSquare,
+    title: 'Mentoring at Scale',
+    desc: 'Actively mentored 12+ engineers. I understand career stages and can provide personalized guidance for your specific situation.',
+  },
+  {
+    icon: Globe,
+    title: 'Global Perspective',
+    desc: 'My immigration journey and travels have given me insight into diverse career paths and the unique challenges of building careers across cultures.',
+  },
+  {
+    icon: MessageSquare,
+    title: 'Honest, Direct Feedback',
+    desc: "I'll tell you what you need to hear, not what you want to hear. Growth happens through honest conversations and actionable improvement.",
+  },
+];
+
+const lifeTiles = [
+  { icon: Plane, title: 'Travel', subtitle: 'Exploring cultures globally' },
+  { icon: BookOpen, title: 'Tech Writing', subtitle: 'Deep dives and lessons' },
+  { icon: Users, title: 'Mentorship', subtitle: 'Helping engineers grow' },
+  { icon: TrendingUp, title: 'Growth', subtitle: 'Continuous learning' },
+];
 
 export default function Home() {
-  const featuredServices = services.slice(0, 3);
-  const featuredPosts = blogPosts.slice(0, 3);
-
   return (
     <div>
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 overflow-hidden">
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-yellow-50/60 via-white/40 to-white/80 pointer-events-none" />
-
-        <div className="relative z-10 max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-black/8 text-foreground px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-            <MapPin size={14} className="text-accent" />
-            🌍 Engineering Leader at Amazon
-          </div>
-
-          {/* Heading */}
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-            DKP — The{' '}
-            <span className="text-accent">Tech Nomad</span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 leading-relaxed">
-            10+ years building systems. Mentor budding and seasoned engineers. Travel whenever I can.
-          </p>
-
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            I help engineers master interviews, design systems at scale, and build careers—from wherever you are in the world. 10+ years of experience building infrastructure at Amazon.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="https://topmate.io/dheeraj_kumar7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              Book a Session
-              <ArrowRight size={16} />
-            </a>
-            <Link href="/tech.nomad.life/services">
-              <a className="flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-black/10 text-foreground hover:bg-white/80 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all hover:-translate-y-0.5">
-                Explore Services
-              </a>
-            </Link>
-          </div>
-
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 mt-14">
-            {[
-              { value: '10+', label: 'Years Experience' },
-              { value: '60+', label: 'Engineers Hired' },
-              { value: '12+', label: 'Engineers Mentored' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl font-bold font-serif text-foreground">{stat.value}</div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 pb-10 bg-[#FAF8F5]">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-[#FEF3E2] border border-[#FDDBA8] text-[#92400E] text-xs font-medium px-4 py-1.5 rounded-full mb-8">
+          👨🏻‍💻 Engineering Leader at Amazon
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-50">
-          <div className="w-px h-8 bg-foreground/30" />
-          <div className="text-xs text-muted-foreground">Scroll</div>
-        </div>
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-[#1C1A17] leading-none tracking-tight mb-5">
+          Hello World!
+        </h1>
+
+        <p className="text-xl text-[#6B6560] mb-1">👋🏼 I'm Dheeraj</p>
+        <p className="text-base font-medium text-[#1C1A17] mb-6">Human in the Loop</p>
+
+        <p className="text-[#6B6560] text-base max-w-xl mx-auto leading-relaxed mb-10">
+          10+ years building systems with the 'ities. I mentor budding and seasoned engineers. I help engineers master interviews, design systems at scale, and build careers—from wherever you are in the world. On the personal side, I enjoy traveling and exploring new places, people and discovering myself. Bonus: I learned some through my own immigration journey, and would love to share and help anyone in need!
+        </p>
+
+        <Link href="/about">
+          <a className="inline-flex items-center gap-2 border-2 border-[#1C1A17] text-[#1C1A17] font-medium px-7 py-2.5 rounded-full hover:bg-[#1C1A17] hover:text-white transition-all text-sm">
+            My Journey
+          </a>
+        </Link>
       </section>
 
-      {/* ── Services Preview ── */}
-      <section className="py-20 px-6 bg-secondary/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">What I Offer</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Specialized Coaching
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Specialized coaching tailored to your specific career stage.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            {featuredServices.map((service) => (
-              <div
-                key={service.id}
-                className="bg-card rounded-2xl p-6 border border-border shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 flex flex-col"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="font-semibold text-foreground text-lg leading-tight">{service.title}</h3>
-                  <span className="bg-accent/10 text-accent text-sm font-bold px-3 py-1 rounded-full ml-2 shrink-0">
-                    {service.price}
-                  </span>
-                </div>
-                <p className="text-muted-foreground text-sm mb-5 flex-1">{service.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <Clock size={13} />
-                    {service.duration}
-                  </span>
-                  <a
-                    href={service.bookingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold text-accent hover:underline flex items-center gap-1"
-                  >
-                    Book Now <ArrowRight size={13} />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link href="/tech.nomad.life/services">
-              <a className="inline-flex items-center gap-2 border border-border bg-background hover:bg-secondary px-6 py-3 rounded-xl text-sm font-semibold transition">
-                View All Services <ArrowRight size={15} />
-              </a>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── About Preview ── */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            {/* Image */}
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-full h-full bg-accent/10 rounded-3xl" />
+      {/* ── About Me ── */}
+      <section className="py-24 px-6 bg-[#FAF8F5]">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Image with border decoration */}
+          <div className="relative">
+            <div className="border-2 border-[#F97316]/40 rounded-2xl p-3">
               <img
                 src="/tech.nomad.life/assets/profile-about.jpg"
                 alt="Dheeraj Kumar Paras"
-                className="relative rounded-3xl w-full object-cover shadow-xl max-h-[520px]"
+                className="w-full rounded-xl object-cover max-h-[500px]"
               />
             </div>
-
-            {/* Content */}
-            <div>
-              <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">About Me</p>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-5">
-                Engineering Leader at Amazon, Builder, Nomad
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-5">
-                I'm a Software Development Manager at Amazon leading a team of 8+ engineers on AWS Lambda. With 10+ years of experience, I understand what it takes to succeed at top tech companies.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                I've hired Over 60 engineers and mentored 12+. Beyond code, I'm passionate about sharing real stories—immigration challenges, travel adventures, and the human side of tech careers.
-              </p>
-              <Link href="/tech.nomad.life/about">
-                <a className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-xl font-semibold text-sm hover:bg-accent/90 transition hover:-translate-y-0.5">
-                  Learn More About Me <ArrowRight size={15} />
-                </a>
-              </Link>
+            {/* Floating India → USA card */}
+            <div className="absolute bottom-6 right-0 translate-x-4 bg-white rounded-xl shadow-lg px-4 py-2.5 flex items-center gap-2 text-sm font-medium text-[#1C1A17]">
+              🇮🇳 ✈️ 🇺🇸 India → USA
             </div>
+          </div>
+
+          {/* Content */}
+          <div>
+            {/* DKP badge + label */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-[#FEF3E2] border border-[#FDDBA8] rounded-full flex items-center justify-center">
+                <span className="text-[#F97316] font-bold text-sm">DKP.</span>
+              </div>
+              <span className="text-xs font-semibold tracking-widest text-[#6B6560] uppercase">About Me</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-black text-[#1C1A17] leading-tight mb-6">
+              Engineering Leader,<br />Builder, Nomad
+            </h2>
+
+            <p className="text-[#6B6560] text-base leading-relaxed mb-4">
+              I'm a Software Development Manager, currently leading a team of super-talented engineers. With 10+ years of overall experience, I deeply understand what it takes to succeed at top tech companies.
+            </p>
+            <p className="text-[#6B6560] text-base leading-relaxed mb-8">
+              I'm a seasoned interviewer and have coached and mentored multiple entry and mid level engineers. Beyond code, I'm passionate about sharing real stories—immigration challenges, travel adventures, and the human side of tech careers.
+            </p>
+
+            {/* Tags grid */}
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              {[
+                { icon: MapPin, label: 'Based in the US' },
+                { icon: Briefcase, label: 'Tech Builder' },
+                { icon: Users, label: 'Mentor & Coach' },
+                { icon: TrendingUp, label: 'Engineering Leader' },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2 text-sm text-[#6B6560]">
+                  <Icon size={15} className="text-[#F97316]" />
+                  {label}
+                </div>
+              ))}
+            </div>
+
+            <Link href="/about">
+              <a className="inline-flex items-center gap-2 border border-[#D8D0C4] text-[#1C1A17] text-sm font-medium px-5 py-2.5 rounded-full hover:border-[#1C1A17] transition-colors">
+                Read My Full Story <ArrowRight size={14} />
+              </a>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Why Me ── */}
-      <section className="py-20 px-6 bg-secondary/40">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Why Work With Me</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Professional guidance tailored to help you land top roles and grow as an engineer.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyMePoints.map((point, i) => {
-              const Icon = whyIcons[i] || CheckCircle;
+      {/* ── What Makes Me Effective ── */}
+      <section className="py-24 px-6 bg-[#FAF8F5]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black text-[#1C1A17] text-center mb-14">
+            What Makes Me Effective as a Mentor
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {mentorPoints.map((point) => {
+              const Icon = point.icon;
               return (
-                <div key={point.title} className="bg-card rounded-2xl p-6 border border-border">
-                  <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon size={20} className="text-accent" />
+                <div
+                  key={point.title}
+                  className="bg-white border border-[#E8E2D9] rounded-2xl p-6 hover:shadow-sm transition-shadow"
+                >
+                  <div className="w-10 h-10 bg-[#FEF3E2] rounded-xl flex items-center justify-center mb-4">
+                    <Icon size={18} className="text-[#F97316]" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{point.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{point.description}</p>
+                  <h3 className="font-bold text-[#1C1A17] text-base mb-2">{point.title}</h3>
+                  <p className="text-[#6B6560] text-sm leading-relaxed">{point.desc}</p>
                 </div>
               );
             })}
@@ -193,84 +158,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-5">
-            Let's work together to land your dream role or accelerate your technical growth.
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            If you need a tailored coaching plan or have specific requirements, reach out. I can create a custom package based on your needs.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://topmate.io/dheeraj_kumar7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-accent/90 transition hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              Book a Session <ArrowRight size={15} />
-            </a>
-            <Link href="/tech.nomad.life/services">
-              <a className="flex items-center gap-2 border border-border bg-background hover:bg-secondary px-7 py-3.5 rounded-xl font-semibold text-sm transition hover:-translate-y-0.5">
-                View All Services
-              </a>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Blog Preview ── */}
-      <section className="py-20 px-6 bg-secondary/40">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Blog</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-              From system design deep dives to immigration stories, travel adventures, and lessons learned leading teams at Amazon.
+      {/* ── Life, Lessons, and Growth ── */}
+      <section className="py-24 px-6 bg-gradient-to-br from-[#FEF3E2] via-[#FAF8F5] to-[#FAF8F5]">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left text */}
+          <div>
+            <span className="inline-block bg-[#FEF3E2] border border-[#FDDBA8] text-[#92400E] text-xs font-semibold px-3 py-1 rounded-full mb-5">
+              Beyond Code
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-[#1C1A17] leading-tight mb-6">
+              Life, Lessons, and Growth
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            {featuredPosts.map((post) => (
-              <article
-                key={post.id}
-                className="bg-card rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 flex flex-col"
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-accent/10 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full">
-                      {post.category}
-                    </span>
-                    <span className="text-xs text-muted-foreground">{post.readTime}</span>
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2 leading-snug">{post.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 line-clamp-2">{post.excerpt}</p>
-                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-                    <span className="text-xs text-muted-foreground">{post.date}</span>
-                    <Link href={`/tech.nomad.life/blog/${post.id}`}>
-                      <a className="text-sm font-semibold text-accent hover:underline flex items-center gap-1">
-                        Read <ArrowRight size={13} />
-                      </a>
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link href="/tech.nomad.life/blog">
-              <a className="inline-flex items-center gap-2 border border-border bg-background hover:bg-secondary px-6 py-3 rounded-xl text-sm font-semibold transition">
-                View All Posts <ArrowRight size={15} />
+            <p className="text-[#6B6560] text-base leading-relaxed mb-4">
+              I'm not just about climbing the corporate ladder. I've navigated immigration from India to the US, explored 6+ countries across the European and American sub-continents, and learned that resilience and human connection matter as much as technical skills.
+            </p>
+            <p className="text-[#6B6560] text-base leading-relaxed mb-8">
+              I write about these experiences—career pivots, cultural challenges, travel stories. Because the best engineers are well-rounded humans.
+            </p>
+            <Link href="/blog">
+              <a className="inline-flex items-center gap-2 bg-[#F97316] hover:bg-[#EA6C0A] text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm">
+                Read My Articles <ArrowRight size={15} />
               </a>
             </Link>
+          </div>
+
+          {/* Right 2x2 grid */}
+          <div className="grid grid-cols-2 gap-4">
+            {lifeTiles.map(({ icon: Icon, title, subtitle }) => (
+              <div
+                key={title}
+                className="bg-white border border-[#E8E2D9] rounded-2xl p-6 hover:shadow-sm transition-shadow"
+              >
+                <div className="w-10 h-10 bg-[#FEF3E2] rounded-xl flex items-center justify-center mb-4">
+                  <Icon size={18} className="text-[#F97316]" />
+                </div>
+                <h3 className="font-bold text-[#1C1A17] text-base mb-1">{title}</h3>
+                <p className="text-[#6B6560] text-sm">{subtitle}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
